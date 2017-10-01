@@ -12,7 +12,8 @@ Requirements:
 - Nginx
 - MariaDB
 
-###### Quick order esquisse
+###### Draft order page esquisse
 
 ![alt text](https://github.com/openbsod/webproxmgr/blob/master/order_page.png)
+![alt text](https://github.com/openbsod/webproxmgr/blob/master/draft2.png)
 
