@@ -1,0 +1,8 @@
+# win 2k12 genisoimage -udf -r -b boot/etfsboot.com -no-emul-boot -o win2012.iso wincd
+# win 2k12 R2 genisoimage -udf -allow-limited-size -r -b boot/etfsboot.com -no-emul-boot -o win2012.iso win2k12
+# win 2k8 R2 genisoimage -udf -r -b boot/etfsboot.com -no-emul-boot -o /nfs/iso/template/iso/win2008.iso win2008r2
+
+c:\Program Files (x86)\Windows Kits\8.1\Assessment and Deployment Kit\Deployment
+ Tools\amd64\Oscdimg>oscdimg.exe -bc:\\Users\Administrator\Documents\ISO\boot\et
+fsboot.com -u2 -h -m -lWIN_SERVER_2012_R2_STANDARD "C:\Users\Administrator\Docum
+ents\ISO c:\\win2012.iso
