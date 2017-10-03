@@ -1,0 +1,17 @@
+mkdir iso
+cd iso
+mkdir cd
+mkdir loopdir
+#rm CentOS-7-x86_64-Minimal-1611.iso
+#rm /nfs/iso/template/iso/CentOS-7-x86_64-Minimal-1611.iso
+wget http://mirror.your-server.de/centos/7/isos/x86_64/CentOS-7-x86_64-Minimal-1611.iso
+mount -o loop CentOS-7-x86_64-Minimal-1611.iso loopdir
+rsync -a -H --exclude=TRANS.TBL loopdir/ cd
+umount loopdir
+vi cd/isolinux/isolinux.cfg
+genisoimage -o CentOS-7-x86_64-Minimal-1611-ks.iso -r -J -no-emul-boot -boot-load-size 4 -boot-info-table -b isolinux/isolinux.bin -c isolinux/boot.cat ./cd
+rm -rf cd/
+#cp CentOS-7-x86_64-Minimal-1611-ks.iso /nfs/iso/template/iso/
+#chown nobody:nogroup /nfs/iso/template/iso/CentOS-7-x86_64-Minimal-1611-ks.iso
+#systemctl restart nfs-kernel-server.service
+scp CentOS-7-x86_64-Minimal-1611-ks.iso user@ip:/path-to-nfs
