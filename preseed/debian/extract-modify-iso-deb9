@@ -1,0 +1,29 @@
+cd ~/
+mkdir iso
+cd iso
+#rm debian-9.1.0-amd64-netinst-preseed.iso 
+#rm /nfs/iso/template/iso/debian-9.1.0-amd64-netinst-preseed.iso
+wget https://cdimage.debian.org/cdimage/release/9.1.0/amd64/iso-cd/debian-9.1.0-amd64-netinst.iso
+mkdir loopdir
+mount -o loop debian-9.1.0-amd64-netinst.iso loopdir
+mkdir cd
+rsync -a -H --exclude=TRANS.TBL loopdir/ cd
+umount loopdir
+mkdir irmod
+cd irmod
+gzip -d < ../cd/install.amd/initrd.gz | cpio --extract --verbose --make-directories --no-absolute-filenames
+chmod 777 cd/isolinux/isolinux.cfg
+#vi preseed.cfg
+vi cd/isolinux/isolinux.cfg
+chmod 444 cd/isolinux/isolinux.cfg
+find . | cpio -H newc --create --verbose | gzip -9 > ../cd/install.amd/initrd.gz
+cd ../
+rm -fr irmod/
+cd cd
+md5sum `find -follow -type f` > md5sum.txt
+cd ..
+genisoimage -o debian-9.1.0-amd64-netinst-preseed.iso -r -J -no-emul-boot -boot-load-size 4 -boot-info-table -b isolinux/isolinux.bin -c isolinux/boot.cat ./cd
+rm -rf cd/
+cp debian-9.1.0-amd64-netinst-preseed.iso /nfs/iso/template/iso/
+chown nobody:nogroup /nfs/iso/template/iso/debian-9.1.0-amd64-netinst-preseed.iso
+#scp debian-9.1.0-amd64-netinst-preseed.iso user@ip:/path-to-nfs

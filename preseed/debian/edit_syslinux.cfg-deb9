@@ -1,0 +1,11 @@
+# D-I config version 2.0
+# search path for the c32 support libraries (libcom32, libutil etc.)
+path
+include menu.cfg
+default netinst
+prompt 0
+timeout 0
+
+LABEL netinst
+kernel /install.amd/vmlinuz
+append auto=true priority=critical auto url=http://10.161.52.1/preseed-deb9.cfg vga=788 initrd=/install.amd/gtk/initrd.gz --- quiet
