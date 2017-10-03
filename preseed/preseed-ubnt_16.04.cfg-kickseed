@@ -1,0 +1,50 @@
+#version=UBNT16.04 ks
+
+text
+install
+cdrom
+#Reboot after installation
+reboot
+auth  --useshadow  --enablemd5 
+keyboard us
+lang en_US.UTF-8
+network --device ens18 --bootproto=static --ip=10.10.53.99 --netmask=255.255.252.0 --gateway=10.10.52.1 --nameserver=208.67.220.222 --onboot=yes
+rootpw --disabled
+user user --fullname "user" --password "passw0rd"
+# System timezone
+timezone Europe/Berlin --isUtc
+# Firewall configuration
+firewall --disabled
+
+#System bootloader configuration
+bootloader --location=mbr 
+
+#Clear the Master Boot Record
+zerombr yes
+
+#Partition clearing information
+clearpart --all --initlabel 
+
+#Basic disk partition
+part / --fstype ext4 --size 1 --grow --asprimary 
+part swap --size 1024 
+part /boot --fstype ext4 --size 512 --asprimary
+
+%packages
+@ubuntu-server
+openssh-server
+
+%post
+cat > post-install.sh << 'EOF'
+#!/bin/bash -v
+apt -y install qemu-guest-agent >/root/post_install.log 2>&1
+rm /etc/network/interfaces
+wget http://10.10.52.1/interfaces_ubuntu; \
+cp interfaces_ubuntu /etc/network/interfaces
+EOF
+
+chmod 0755 post-install.sh
+(./post-install.sh) > post-install.log 2>&1
+
+%end
+

@@ -1,0 +1,13 @@
+# D-I Ubuntu 16.04 config version 2.0
+# search path for the c32 support libraries (libcom32, libutil etc.)
+path
+include menu.cfg
+default netinst
+prompt 0
+timeout 0
+
+LABEL netinst
+	set gfxpayload=keep
+  linux   /linux --- quiet
+	initrd /initrd.gz
+  append auto=true priority=critical preseed/locale=en_US kbd-chooser/method=us preseed/url=http://10.161.52.1/preseed-ubnt16.cfg hostname=ub16-preseed domain=example.com

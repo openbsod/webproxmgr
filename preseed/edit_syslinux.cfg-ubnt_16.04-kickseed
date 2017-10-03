@@ -1,0 +1,13 @@
+# D-I Ubuntu 16.04 config version 2.0
+# search path for the c32 support libraries (libcom32, libutil etc.)
+path
+include menu.cfg
+default netinst
+prompt 0
+timeout 0
+
+LABEL netinst
+	set gfxpayload=keep
+  linux   /linux --- quiet
+	initrd /initrd.gz
+	append ks=http://10.10.52.1/preseed-ubnt16.cfg hostname=ubnt16-preseed domain=test.local interface=eth0 netcfg/get_ipaddress=10.10.53.99 netcfg/get_netmask=255.255.252.0 netcfg/get_gateway=10.10.230.1 netcfg/get_nameservers=208.67.220.222 netcfg/disable_dhcp=true
