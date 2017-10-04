@@ -15,3 +15,8 @@ Requirements:
 ###### early alpha draft esquisse
 
 ![alt text](https://github.com/openbsod/webproxmgr/blob/master/webproxmgr.png)
+
+License
+-------
+`` webproxmgr`` is licensed under the GPLv3 license.
+
