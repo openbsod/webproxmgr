@@ -1,0 +1,11 @@
+# D-I Debian config version 2.1
+# search path for the c32 support libraries (libcom32, libutil etc.)
+path
+include menu.cfg
+default netinst
+prompt 0
+timeout 0
+
+LABEL netinst
+kernel /install.amd/vmlinuz
+append initrd=/install.amd/initrd.gz auto=true url=http://10.232.29.39/preseed-deb9.cfg hostname=deb9-preseed domain=test.local netcfg/choose_interface=auto netcfg/dhcp_timeout=1024
