@@ -1,0 +1,227 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body { margin: 0 auto; width: 100%; height: 100%; }
+
+footer, header { position: relative; clear: both; }
+
+.left-column, .right-column, .right-column2, .side-nav, footer, header {  border: 0px solid  #ccc; padding: 1.25em; margin: .5em; }
+
+.columns-container {
+    display: flex;
+}
+
+.btn {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.428571429;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #428bca;
+    border-color: #357ebd
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+    color: #fff;
+    background-color: #3276b1;
+    border-color: #285e8e
+}
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+    background-image: none
+}
+.btn-primary.disabled,
+.btn-primary[disabled],
+fieldset[disabled] .btn-primary,
+.btn-primary.disabled:hover,
+.btn-primary[disabled]:hover,
+fieldset[disabled] .btn-primary:hover,
+.btn-primary.disabled:focus,
+.btn-primary[disabled]:focus,
+fieldset[disabled] .btn-primary:focus,
+.btn-primary.disabled:active,
+.btn-primary[disabled]:active,
+fieldset[disabled] .btn-primary:active,
+.btn-primary.disabled.active,
+.btn-primary[disabled].active,
+fieldset[disabled] .btn-primary.active {
+    background-color: #428bca;
+    border-color: #357ebd
+}
+.btn-primary .badge {
+    color: #428bca;
+    background-color: #fff
+}
+
+.row {
+    float: right;
+    margin-right: 410px
+}
+
+h3 {
+    color: #fff;
+    background-color: #357ebd;
+    border-radius: 4px;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.428571429;
+
+}
+
+h4 {
+    color: #777;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    font-size: 14px;
+    line-height: 1.428571429;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s
+}
+
+.nav {
+  list-style: none;
+  margin-left: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+.nav > li,
+.nav > li > a {
+  display: inline-block;
+  *display: inline-block;
+  zoom: 1;
+}
+
+.inline-items {
+  margin-top: 0;
+}
+
+.inline-items li {
+  margin-left: 0;
+  border-left: 1px solid black;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.inline-items li:first-child {
+  margin-left: 0;
+  border: none;
+  padding-left: 0;
+  padding-right: 10px;
+}
+
+.inline-items li:last-child {
+  padding-right: 0;
+}
+
+ 
+/* MEDIA QUERIES */
+@media screen and (min-width: 47.5em ) {
+  .side-nav { width: auto; }
+
+  .columns-container { 
+    float: left;
+  }
+
+  .left-column { 
+    margin-right: 20em;
+    float: left;
+  }
+
+  .right-column { 
+    width: 18.75em;
+    margin-left: -19.3em;
+    float: left;
+  }
+
+  .right-column2 {
+    width: 18.75em;
+    margin-left: -19.3em;
+    float: left;
+  }
+	
+}
+
+@media screen and ( min-width: 62.5em ) {
+
+  .side-nav {
+    width: 9.5em;
+    margin-right: -10.75em;
+    float: left;
+  }
+
+  .left-column {
+    margin-left: 10.7em;
+  }
+
+  .nav > li,
+  .nav > li > a {
+    display: block;
+    *display: block;
+    zoom: 1;
+  }
+
+  .inline-items li { padding-left: 0; border: none; }
+
+  .right-column {
+    width: 18.75em;
+    margin-left: -19.3em;
+    float: left;
+  }
+
+.right-column2 {
+    width: 18.75em;
+    margin-left: -19.3em;
+    float: left;
+  }
+
+}
