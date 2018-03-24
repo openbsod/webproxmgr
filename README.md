@@ -9,8 +9,19 @@ Requirements:
 - [noVNC](https://github.com/novnc/noVNC)
 - [websockify](https://github.com/novnc/websockify)
 
-- Nginx
+- Nginx 
 - MariaDB
+
+###### PHP modules
+
+- apt list --installed | grep php
+
+php-common php7.0-gd php7.0-json php7.0-mysql php7.0-opcache php7.0-readline php7.0-xml
+php-curl php-fpm php-mysql php7.0-cli php7.0-common php7.0-curl php7.0-fpm 
+
+- php -v
+
+PHP 7.0.28-0ubuntu0.16.04.1
 
 ###### early alpha draft esquisse
 
