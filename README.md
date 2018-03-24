@@ -9,8 +9,16 @@ Requirements:
 - [noVNC](https://github.com/novnc/noVNC)
 - [websockify](https://github.com/novnc/websockify)
 
-- Nginx 
+- Nginx apt install nginx-full
 - MariaDB
+
+- apt install mysql-server
+  mysql_secure_installation /* set root password */
+  mysql -u root -p < 20180324.admin.sql /* create db scheme for users */
+  mysql -u root -p < 20180324.vds.sql /* create db scheme for vds deploying */
+  CREATE USER 'admin'@'localhost' IDENTIFIED BY 'password'; /* grant permissions to db admin */
+  GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost';
+  FLUSH PRIVILEGES;
 
 ###### PHP modules
 
