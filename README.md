@@ -9,8 +9,8 @@ Requirements:
 - [noVNC](https://github.com/novnc/noVNC)
 - [websockify](https://github.com/novnc/websockify)
 
-- Nginx apt install nginx-full
-- MariaDB /* apt install mysql-server */
+- Nginx     /* apt install nginx-full */
+- MariaDB   /* apt install mysql-server */
 
 ```
   mysql_secure_installation /* set root password */
@@ -23,14 +23,16 @@ Requirements:
 
 ###### PHP modules
 
-- apt list --installed | grep php
+```
+apt list --installed | grep php
 
-php-common php7.0-gd php7.0-json php7.0-mysql php7.0-opcache php7.0-readline php7.0-xml
-php-curl php-fpm php-mysql php7.0-cli php7.0-common php7.0-curl php7.0-fpm 
+  php-common php7.0-gd php7.0-json php7.0-mysql php7.0-opcache php7.0-readline php7.0-xml
+  php-curl php-fpm php-mysql php7.0-cli php7.0-common php7.0-curl php7.0-fpm 
 
-- php -v
+php -v
 
-PHP 7.0.28-0ubuntu0.16.04.1
+  PHP 7.0.28-0ubuntu0.16.04.1
+```
 
 ###### early alpha draft esquisse
 
